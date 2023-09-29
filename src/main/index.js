@@ -7,9 +7,14 @@ import icon from '../../resources/icon.png?asset'
 
 function createWindow() {
   //Create the browser window.
-  const mainWindow = new BrowserWindow({
+  const size = {
     width: 900,
-    height: 670,
+    height: 670
+  }
+  const mainWindow = new BrowserWindow({
+    ...size,
+    minWidth: size.width,
+    minHeight: size.height,
     show: false,
     autoHideMenuBar: true,
     ...(process.platform === 'linux' ? { icon } : {}),
