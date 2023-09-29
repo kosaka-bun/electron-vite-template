@@ -28,6 +28,28 @@ function createWindow() {
     return { action: 'deny' }
   })
 
+  //修改请求时的请求头
+  mainWindow.webContents.session.webRequest.onBeforeSendHeaders((details, callback) => {
+    const requestHeaders = {
+      ...details.requestHeaders
+    }
+    //移除这些请求头，防止服务端根据这些请求头而拒绝响应
+    delete requestHeaders['Origin']
+    delete requestHeaders['Referer']
+    callback({
+      requestHeaders
+    });
+  });
+  //为所有HTTP请求的响应添加跨域响应头
+  mainWindow.webContents.session.webRequest.onHeadersReceived((details, callback) => {
+    callback({
+      responseHeaders: {
+        'Access-Control-Allow-Origin': ['*'],
+        ...details.responseHeaders,
+      }
+    });
+  });
+
   //HMR for renderer base on electron-vite cli.
   //Load the remote URL for development or the local html file for production.
   if(is.dev && process.env['ELECTRON_RENDERER_URL']) {

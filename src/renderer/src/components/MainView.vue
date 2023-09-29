@@ -28,6 +28,10 @@
     <div class="link-item">
       <RouterLink to="/login">Router Test (Login)</RouterLink>
     </div>
+    <div class="link-item link-dot">•</div>
+    <div class="link-item">
+      <RouterLink to="/httpApiTest">HTTP API Test</RouterLink>
+    </div>
   </div>
 
   <div class="features">

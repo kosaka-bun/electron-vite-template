@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import LoginView from '../components/LoginView.vue'
 import MainView from '../components/MainView.vue'
+import HttpApiTest from '../components/HttpApiTest.vue'
 
 const routes = [
   {
@@ -12,6 +13,11 @@ const routes = [
     path: '/login',
     name: 'login',
     component: LoginView
+  },
+  {
+    path: '/httpApiTest',
+    name: 'httpApiTest',
+    component: HttpApiTest
   }
 ]
 
