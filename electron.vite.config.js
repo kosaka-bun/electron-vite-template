@@ -4,10 +4,10 @@ import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
   main: {
-    plugins: [externalizeDepsPlugin()]
+    plugins: [ externalizeDepsPlugin() ]
   },
   preload: {
-    plugins: [externalizeDepsPlugin()]
+    plugins: [ externalizeDepsPlugin() ]
   },
   renderer: {
     resolve: {
@@ -15,6 +15,6 @@ export default defineConfig({
         '@renderer': resolve('src/renderer/src')
       }
     },
-    plugins: [vue()]
+    plugins: [ vue() ]
   }
 })
