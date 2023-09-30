@@ -1,4 +1,4 @@
-import './assets/css/styles.less'
+import './assets/css/styles.scss'
 
 import { createApp } from 'vue'
 

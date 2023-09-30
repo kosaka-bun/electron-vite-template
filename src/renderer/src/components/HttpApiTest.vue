@@ -21,11 +21,12 @@ onMounted(() => {
 })
 </script>
 
-<style scoped lang="less">
+<style scoped lang="scss">
 .content {
   border: 1px solid white;
   padding: 0.5em;
   margin-top: 0.5em;
+  margin-bottom: 1em;
 }
 
 pre {
