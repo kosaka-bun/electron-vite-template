@@ -18,7 +18,7 @@ request.interceptors.request.use(config => {
 request.interceptors.response.use(response => {
   const status = response.status
   const body = response.data
-  if(status !== 200 || (body.code !== 0 && body.code !== 200)) {
+  if(status !== 200) {
     return Promise.reject(new Error('API error: ' + body.msg))
   }
   return body
